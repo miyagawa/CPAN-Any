@@ -1,0 +1,70 @@
+NAME
+    CPAN::Any - Install Perl modules using any of CPAN clients
+
+SYNOPSIS
+      use CPAN::Any;
+
+      # install modules using the user's favorite installer
+      CPAN::Any->install_module("Plack");
+
+      # explicitly specify which client to use
+      my $cpan = CPAN::Any->new("cpanm");
+      $cpan->install_module("Catalyst");
+
+DESCRIPTION
+    CPAN::Any is an interface to install Perl modules using any CPAN client.
+
+WHY
+    There are many tools and modules that use (one of) CPAN clients to
+    install modules, and most of them hardcode the author's favorite CPAN
+    clients, either CPAN, CPANPLUS or cpanm. Examples are
+    "App::CPAN::Fresh", Acme::Everything, Module::AutoINC and CPAN::AutoINC,
+    but could be more.
+
+    CPAN::Any provides one unified interface to install modules, and which
+    client to use is now up to user's own configuration.
+
+METHODS
+    install_module
+          CPAN::Any->install_module($package [, ... ]);
+
+        Install the module using its package name. Calling this method as a
+        class method is equivalent to:
+
+          my $client = CPAN::Any->auto;
+          $client->install_module($package);
+
+PREFERENCE
+    "CPAN::Any->install_module($module)" and friends will automatically
+    detect which client to use, based on the following order.
+
+    PERL_PREFER_CPAN_CLIENT
+        Users can set the environment variable "PERL_PREFER_CPAN_CLIENT" to
+        the acceptable client name. Acceptable values are "CPAN", "CPANP",
+        "CPANPLUS", "cpanm" and "cpanminus".
+
+    CPAN::Any::Config
+        When this module (CPAN::Any) is installed from CPAN, CPANPLUS or
+        cpanm it automatically sets up the current installer you use as the
+        preferred installer type in CPAN::Any::Config module and installs it
+        in your site include path.
+
+        You can reinstall modules using one of those installers to change
+        the default preference.
+
+    fallback to CPAN
+        If none of the above is set, the default installer is CPAN.
+
+AUTHOR
+    Tatsuhiko Miyagawa <miyagawa@bulknews.net>
+
+COPYRIGHT
+    Copyright 2010- Tatsuhiko Miyagawa
+
+LICENSE
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+SEE ALSO
+    CPAN, CPANPLUS, App::cpanminus
+

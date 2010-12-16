@@ -1,0 +1,6 @@
+META.yml
+Makefile
+inc/
+pm_to_blib
+*~
+lib/CPAN/Any/Config.pm
