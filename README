@@ -17,9 +17,8 @@ DESCRIPTION
 WHY
     There are many tools and modules that use (one of) CPAN clients to
     install modules, and most of them hardcode the author's favorite CPAN
-    clients, either CPAN, CPANPLUS or cpanm. Examples are
-    "App::CPAN::Fresh", Acme::Everything, Module::AutoINC and CPAN::AutoINC,
-    but could be more.
+    clients, either CPAN, CPANPLUS or cpanm. Examples are App::CPAN::Fresh,
+    Acme::Everything, Module::AutoINC and CPAN::AutoINC, but could be more.
 
     CPAN::Any provides one unified interface to install modules, and which
     client to use is now up to user's own configuration.

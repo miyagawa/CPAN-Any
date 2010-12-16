@@ -79,7 +79,7 @@ CPAN::Any is an interface to install Perl modules using any CPAN client.
 There are many tools and modules that use (one of) CPAN clients to
 install modules, and most of them hardcode the author's favorite CPAN
 clients, either L<CPAN>, L<CPANPLUS> or L<cpanm>. Examples are
-C<App::CPAN::Fresh>, L<Acme::Everything>, L<Module::AutoINC> and
+L<App::CPAN::Fresh>, L<Acme::Everything>, L<Module::AutoINC> and
 L<CPAN::AutoINC>, but could be more.
 
 L<CPAN::Any> provides one unified interface to install modules, and
