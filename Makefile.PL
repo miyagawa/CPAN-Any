@@ -46,7 +46,9 @@ sub get_client_type {
         return 'cpanminus';
     }
 
-    if ($ENV{PERL5_CPANPLUS_IS_RUNNING}) {
+    # CPAN.pm sets CPANPLUS_IS_RUNNING too :(
+    # https://rt.cpan.org/Ticket/Display.html?id=2373
+    if ($ENV{PERL5_CPANPLUS_IS_EXECUTING}) {
         return 'CPANPLUS';
     }
 
