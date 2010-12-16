@@ -41,7 +41,8 @@ PREFERENCE
     PERL_PREFER_CPAN_CLIENT
         Users can set the environment variable "PERL_PREFER_CPAN_CLIENT" to
         the acceptable client name. Acceptable values are "CPAN", "CPANP",
-        "CPANPLUS", "cpanm" and "cpanminus".
+        "CPANPLUS", "cpanm" and "cpanminus". The values are case insensitive
+        for convenience.
 
     CPAN::Any::Config
         When this module (CPAN::Any) is installed from CPAN, CPANPLUS or

@@ -112,7 +112,8 @@ automatically detect which client to use, based on the following order.
 
 Users can set the environment variable C<PERL_PREFER_CPAN_CLIENT> to
 the acceptable client name. Acceptable values are C<CPAN>, C<CPANP>,
-C<CPANPLUS>, C<cpanm> and C<cpanminus>.
+C<CPANPLUS>, C<cpanm> and C<cpanminus>. The values are case
+insensitive for convenience.
 
 =item CPAN::Any::Config
 
